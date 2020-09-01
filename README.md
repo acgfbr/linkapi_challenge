@@ -35,7 +35,9 @@ REQUISITOS
 
 - [x] Criar uma collection no banco de dados MongoDB agregando as oportunidades inseridas no Bling por dia e valor total.
 
-Proof: ![image info](./groupby.png)
+Proof: 
+
+![image info](./groupby.png)
 
 - [ ] Criar endpoint para trazer os dados consolidados da collection do MongoDB.
 
