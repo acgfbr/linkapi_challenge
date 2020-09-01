@@ -6,6 +6,7 @@ Gostaria de agradecer a oportunidade.
 
 Desafio: [link pro desafio!](challenge.md)
 <hr>
+
 Setup (mac/linux):
 -   1 - cp .env.example .env - Configure as credenciais no environment
 -   2 - dê permissão no setup.sh com chmod +x setup.sh - Este script vai fazer todo o setup necessário e vai deixar os containers rodando em background.
