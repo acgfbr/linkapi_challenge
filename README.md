@@ -43,7 +43,12 @@ Proof:
 
 Endpoint`s disponíveis:
 -   /list - Lista TODOS os itens da tabela opportunities sem paginação (não foi feita por falta de tempo/preguiça)
--   /totalByDay - Lista um dos requisitos, que é agrupar por dia e somar o total do valor da oportunidade do pipedrive, foi feito um endpoint e um cli command
+
+![image info](./list.png)
+-   /totalByDay - Lista um dos requisitos, que é agrupar por dia e somar o total do valor da oportunidade do pipedrive, foi feito um endpoint 
+e um cli command
+
+![image info](./totalByDay.png)
 
 <hr>
 
