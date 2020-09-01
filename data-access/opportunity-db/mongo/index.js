@@ -80,7 +80,7 @@ let deleteOpportunity = (id) => {
 }
 
 let dropAll = () => {
-  return Opportunity.remove()
+  return Opportunity.deleteMany({})
 }
 
 module.exports = {

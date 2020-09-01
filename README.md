@@ -61,3 +61,10 @@ e um cli command, o agrupamento foi feito usando aggregate e não percorrendo to
 
 -    Foi feito uma cron para sincronizar de 5 em 5 minutos as oportunidades ganhas do pipedrive ao bling
 -    A thread principal sobe a api, existe um container exclusivo pra fila, usei o pacote bull que tenho familiariade, optei por utilizar um container exclusivo na fila porque podemos ter vários pods no kubernetes executando o mesmo comando e processando a fila.
+
+
+## Foram feitos os seguintes testes (teste de crud básico):
+✓ drops database (358ms) -- limpa o banco de dados
+✓ lists opportunities (178ms) - lista todas oportunidades
+✓ find opportunity by opportunity_id (352ms) - procura uma oportunidade 
+✓ delete a opportunity (536ms)
