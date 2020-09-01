@@ -12,8 +12,12 @@ if (config.APP_ENV === 'prod') {
   
   const username = config.mongo.MONGO_USER
   const password = config.mongo.MONGO_PASS
-                    
-  mongoose.connect(`mongodb://${username}:${password}@cluster0-shard-00-00.pgkwm.mongodb.net:27017,cluster0-shard-00-01.pgkwm.mongodb.net:27017,cluster0-shard-00-02.pgkwm.mongodb.net:27017/linkapi?ssl=true&replicaSet=atlas-57svpj-shard-0&authSource=admin&retryWrites=true&w=majority`)
+  const stringConn = config.mongo.MONGO_STRING
+     
+  mongoose.connect(`mongodb://${username}:${password}@${stringConn}`, { connectTimeoutMS: 1000, serverSelectionTimeoutMS: 1000}).catch(err => {
+    logger.error(`CONNECTION ERR: `+err);
+  })
+  
 }else{
     throw new Error('APP ENV NOT CONFIGURED')
 }
@@ -21,9 +25,9 @@ if (config.APP_ENV === 'prod') {
 mongoose.connection.once('open', function () {
   logger.debug('Connection has been made');
 }).on('error', function (error) {
-  console.debug('Connect error', error);
+  logger.debug('Connect error ' + error);
 }).on('disconnected', function () {
-  console.debug('Connection disconnected');
+  logger.debug('Connection disconnected');
 })
 
 module.exports = mongoose

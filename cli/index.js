@@ -1,17 +1,19 @@
-let args = require('yargs-parser')(process.argv.slice(2))
-let opportunityDb = require('../data-access/opportunity-db/index')
+const args = require('yargs-parser')(process.argv.slice(2))
+const opportunityDb = require('../data-access/opportunity-db/index')
+const pipedrive = require('../third-party/pipedrive');
 
-let printHelp = function () {
+const printHelp = function () {
   console.log(`
     Help usage:
     --list  list opportunities
     --seed  insert fake opportunity
     --group list opportunities grouped by day
+    --listAllPipedrive list all pipedrive
     --help   print help
   `);
 }
 
-let valid = args.list || args.seed || args.group
+let valid = args.list || args.seed || args.group || args.listAllPipedrive
 
 if (args.help || !valid) {
   printHelp()
@@ -42,4 +44,13 @@ if(args.group){
         console.log(data);
         process.exit(1)
     });
+}
+
+if(args.listAllPipedrive){
+    (async ()=>{
+        let response = await pipedrive.listAll();
+        console.log(response)
+        process.exit(1)
+    })();
+    
 }

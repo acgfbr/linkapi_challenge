@@ -1,6 +1,6 @@
-let opportunityDb = require('../../data-access/opportunity-db')
+const opportunityDb = require('../../data-access/opportunity-db')
 
-let opportunity = module.exports = {}
+const opportunity = module.exports = {}
 
 opportunity.list = (req, res, next) => {
     opportunityDb.listOpportunities()

@@ -6,6 +6,7 @@ module.exports = {
   LOG_LEVEL: process.env.LOG_LEVEL,
   LOG_DRIVER: process.env.LOG_DRIVER,
   mongo: {
+    MONGO_STRING: process.env.MONGO_STRING,
     MONGO_USER: process.env.MONGO_USER,
     MONGO_PASS: process.env.MONGO_PASS
   },

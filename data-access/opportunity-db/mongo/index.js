@@ -1,6 +1,6 @@
-let Opportunity = require('../../../db/mongodb/models/opportunity')
-let makeOpportunity = require('../../../models/opportunity/index') 
-let serialize = require('./serializer') 
+const Opportunity = require('../../../db/mongodb/models/opportunity')
+const makeOpportunity = require('../../../models/opportunity/index') 
+const serialize = require('./serializer') 
 const mongoose = require('mongoose')
 
 let listOpportunities = () => {

@@ -8,7 +8,7 @@ Desafio: [link pro desafio!](challenge.md)
 <hr>
 
 Setup (mac/linux):
--   1 - cp .env.example .env - Configure as credenciais no environment
+-   1 - cp .env.example .env - Configure as credenciais no arquivo .env com seus dados do bling/pipedrive/mongo
 -   2 - dê permissão no setup.sh com chmod +x setup.sh - Este script vai fazer todo o setup necessário e vai deixar os containers rodando em background.
 
 <hr>
@@ -52,7 +52,7 @@ e um cli command
 
 <hr>
 
--   Pattern utilizado: Hexagonal Architecture (clean code, onion, mesmos nomes pra mesma coisa)
+-   Arquitetura utilizada: Clean Architecture ( tentei, não domino )
 
 -   Desafio iniciado em: 31/08/2020 22:30
 -   Desafio finalizado em: ainda não finalizado
