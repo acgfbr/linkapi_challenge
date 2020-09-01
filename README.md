@@ -55,12 +55,12 @@ e um cli command, o agrupamento foi feito usando aggregate e não percorrendo to
 -   Arquitetura utilizada: Clean Architecture ( tentei, não domino )
 
 -   Desafio iniciado em: 31/08/2020 22:30
--   Desafio finalizado em: ainda não finalizado
+-   Desafio finalizado em: 01/09/2020 17:00
 
--    Utilizei jwt para autorização, como não fiz um crud de usuário disponibilizei um token fixo p/ testes, no futuro basta mexer no middleware e criar a lógica de autorização.
+-    Utilizei token fixo para autorização mas poderia ter utilizado jwt, como não fiz um crud de usuário disponibilizei um token fixo p/ testes, no futuro basta mexer no middleware e criar a lógica de autorização.
 
--    Foi feito uma cron para sincronizar de 5 em 5 minutos as oportunidades ganhas do pipedrive ao bling
--    A thread principal sobe a api, existe um container exclusivo pra fila, usei o pacote bull que tenho familiariade, optei por utilizar um container exclusivo na fila porque podemos ter vários pods no kubernetes executando o mesmo comando e processando a fila.
+-    Foi feito uma cron para sincronizar de 1 em 1 minutos as oportunidades ganhas do pipedrive ao bling
+-    A thread principal sobe a api, existe um container exclusivo pra fila, usei o pacote bull que tenho familiariade, optei por utilizar um container exclusivo na fila porque podemos ter vários pods no kubernetes executando o mesmo comando e processando a fila com varios workers.
 
 
 ## Foram feitos os seguintes testes (teste de crud básico):

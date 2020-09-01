@@ -11,8 +11,20 @@ const app = express()
 const routes = require('./routes')
 const config = require('../config')
 
+var authMiddleware = function (req, res, next) {
+  if(!req.headers.token){
+    return res.status(401).send({
+      statusCode: 401,
+      message: 'invalid token'
+    })
+  }
+  next()
+};
+app.use(authMiddleware);
+
 app.use(bodyParser.json());
 app.use(routes)
+
 
 // basic middleware
 app.use((err, req, res, next) => {
@@ -34,7 +46,7 @@ app.use((err, req, res, next) => {
 // 404 middleware
 app.use(function (req, res) {
   res.status(404).json({
-    status: 'Page does not exist'
+    status: 'Route not exist'
   });
 });
 
