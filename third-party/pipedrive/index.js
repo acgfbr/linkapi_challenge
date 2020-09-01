@@ -5,7 +5,6 @@ pipedriveSDK.Configuration.apiToken = config.pipedrive.API_KEY
 
 let pipedrive = module.exports = {}
 
-
 pipedrive.listWon = async () => {
   const controller = pipedriveSDK.DealsController
   const response = await controller.getAllDeals({ 

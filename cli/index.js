@@ -1,6 +1,7 @@
 const args = require('yargs-parser')(process.argv.slice(2))
 const opportunityDb = require('../data-access/opportunity-db/index')
 const pipedrive = require('../third-party/pipedrive');
+const bling = require('../third-party/bling')
 
 const printHelp = function () {
   console.log(`
@@ -9,11 +10,12 @@ const printHelp = function () {
     --seed  insert fake opportunity
     --group list opportunities grouped by day
     --listAllPipedrive list all pipedrive
+    --blingCreateOrder create simple order bling
     --help   print help
   `);
 }
 
-let valid = args.list || args.seed || args.group || args.listAllPipedrive
+let valid = args.list || args.seed || args.group || args.listAllPipedrive || args.blingCreateOrder
 
 if (args.help || !valid) {
   printHelp()
@@ -51,6 +53,14 @@ if(args.listAllPipedrive){
         let response = await pipedrive.listAll();
         console.log(response)
         process.exit(1)
-    })();
+    })();   
+}
+
+if(args.blingCreateOrder){
+    (async ()=>{
+        let response = await bling.createOrder(1500.34, 'antonio guimaraes');
+        console.log(response.data)
+        process.exit(1)
+    })(); 
     
 }

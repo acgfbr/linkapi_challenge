@@ -46,7 +46,7 @@ Endpoint`s disponíveis:
 
 ![image info](./list.png)
 -   /totalByDay - Lista um dos requisitos, que é agrupar por dia e somar o total do valor da oportunidade do pipedrive, foi feito um endpoint 
-e um cli command
+e um cli command, o agrupamento foi feito usando aggregate e não percorrendo todos dados e agrupando via código, e sim usando um comando direto do banco.
 
 ![image info](./totalByDay.png)
 
@@ -56,3 +56,5 @@ e um cli command
 
 -   Desafio iniciado em: 31/08/2020 22:30
 -   Desafio finalizado em: ainda não finalizado
+
+Utilizei jwt para autorização, como não fiz um crud de usuário disponibilizei um token fixo p/ testes, no futuro basta mexer no middleware e criar a lógica de autorização.
