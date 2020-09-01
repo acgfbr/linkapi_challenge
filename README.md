@@ -9,20 +9,21 @@ Desafio: [link pro desafio!](challenge.md)
 Setup (mac/linux):
 
 -   1 - dê permissão no setup.sh com chmod +x setup.sh - Este script vai fazer todo o setup necessário e vai deixar os containers rodando em background.
--   2 - crie um host no /etc/hosts de linkapi.local para 127.0.0.1
--   3 - acesse linkapi.local no seu browser, o app estará pronto para uso.
 
 <hr>
 
-Foram utilizados neste desafio as seguintes tecnologias:
+## Tecnologias:
 
 -   NodeJS 12
 -   Docker
 -   MongoDB
 
-O readme está em português mas o projeto é 100% feito em inglês.
+## Libs:
+-   Winston para logging em memória
+-   Bull para queue
+-   Mongoose para persistência do mongo
 
-Vídeos do funcionamento:
+O readme está em português mas o projeto é 100% feito em inglês.
 
 REQUISITOS
 
@@ -35,3 +36,9 @@ REQUISITOS
 
 - [ ] Criar endpoint para trazer os dados consolidados da collection do MongoDB.
 
+<hr>
+
+-   Pattern utilizado: Hexagonal Architecture (clean code, onion, mesmos nomes pra mesma coisa)
+
+-   Desafio iniciado em: 31/08/2020 22:30
+-   Desafio finalizado em: ainda não finalizado
