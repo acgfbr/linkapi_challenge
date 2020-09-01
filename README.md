@@ -39,7 +39,11 @@ Proof:
 
 ![image info](./groupby.png)
 
-- [ ] Criar endpoint para trazer os dados consolidados da collection do MongoDB.
+- [x] Criar endpoint para trazer os dados consolidados da collection do MongoDB.
+
+Endpoint`s disponíveis:
+-   /list - Lista TODOS os itens da tabela opportunities sem paginação (não foi feita por falta de tempo/preguiça)
+-   /totalByDay - Lista um dos requisitos, que é agrupar por dia e somar o total do valor da oportunidade do pipedrive, foi feito um endpoint e um cli command
 
 <hr>
 

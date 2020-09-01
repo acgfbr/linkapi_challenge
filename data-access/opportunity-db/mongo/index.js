@@ -37,7 +37,7 @@ let findOpportunitiesGroupByDay = (prop, val) => {
     .then((rows)=>{
       return rows.map((row) => {
           return {
-            date: `${row._id.year}/${row._id.month}/${row._id.day}`,
+            date: `${row._id.year}-${(row._id.month<10) ? '0'+row._id.month : row._id.month}-${row._id.day < 10? '0'+row._id.day : row._id.day }`,
             total: row.total,
             quantity: row.count
           }
