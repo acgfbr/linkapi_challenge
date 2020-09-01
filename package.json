@@ -1,0 +1,8 @@
+{
+  "name": "linkapi_challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/acgfbr/linkapi_challenge.git",
+  "author": "Antonio Guimaraes <acgfbr@gmail.com>",
+  "license": "MIT"
+}
