@@ -5,6 +5,12 @@ module.exports = {
   PORT: process.env.PORT,
   LOG_LEVEL: process.env.LOG_LEVEL,
   LOG_DRIVER: process.env.LOG_DRIVER,
+
+  redis:{
+    host: 'redis',
+    port: 6379
+  },
+  
   mongo: {
     MONGO_STRING: process.env.MONGO_STRING,
     MONGO_USER: process.env.MONGO_USER,

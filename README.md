@@ -29,7 +29,7 @@ O readme está em português mas o projeto é 100% feito em inglês.
 REQUISITOS
 
 - [x] Criar contas testes nas plataformas Pipedrive e Bling.
-- [ ] Criar uma integração entre as plataformas Pipedrive e Bling. (A integração deve buscar as oportunidades com status igual a ganho no Pipedrive, depois inseri-las como pedido no Bling).
+- [x] Criar uma integração entre as plataformas Pipedrive e Bling. (A integração deve buscar as oportunidades com status igual a ganho no Pipedrive, depois inseri-las como pedido no Bling).
 
 - [x] Criar banco de dados mongo, existem serviços como MongoDB Atlas para criar de graça
 
@@ -57,4 +57,7 @@ e um cli command, o agrupamento foi feito usando aggregate e não percorrendo to
 -   Desafio iniciado em: 31/08/2020 22:30
 -   Desafio finalizado em: ainda não finalizado
 
-Utilizei jwt para autorização, como não fiz um crud de usuário disponibilizei um token fixo p/ testes, no futuro basta mexer no middleware e criar a lógica de autorização.
+-    Utilizei jwt para autorização, como não fiz um crud de usuário disponibilizei um token fixo p/ testes, no futuro basta mexer no middleware e criar a lógica de autorização.
+
+-    Foi feito uma cron para sincronizar de 5 em 5 minutos as oportunidades ganhas do pipedrive ao bling
+-    A thread principal sobe a api, existe um container exclusivo pra fila, usei o pacote bull que tenho familiariade, optei por utilizar um container exclusivo na fila porque podemos ter vários pods no kubernetes executando o mesmo comando e processando a fila.

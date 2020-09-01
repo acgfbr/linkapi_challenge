@@ -9,25 +9,26 @@ mongoose.set('useUnifiedTopology', true);
 
 
 if (config.APP_ENV === 'prod') {
+  (async ()=>{
+    const username = config.mongo.MONGO_USER
+    const password = config.mongo.MONGO_PASS
+    const stringConn = config.mongo.MONGO_STRING
+    await mongoose.connect(`mongodb://${username}:${password}@${stringConn}`).catch(err => {
+      logger.error(`CONNECTION ERR: `+err);
+    })
+  })(); 
   
-  const username = config.mongo.MONGO_USER
-  const password = config.mongo.MONGO_PASS
-  const stringConn = config.mongo.MONGO_STRING
-     
-  mongoose.connect(`mongodb://${username}:${password}@${stringConn}`, { connectTimeoutMS: 1000, serverSelectionTimeoutMS: 1000}).catch(err => {
-    logger.error(`CONNECTION ERR: `+err);
-  })
   
 }else{
     throw new Error('APP ENV NOT CONFIGURED')
 }
 
 mongoose.connection.once('open', function () {
-  logger.debug('Connection has been made');
+  logger.debug('Mongo connected');
 }).on('error', function (error) {
-  logger.debug('Connect error ' + error);
+  logger.debug('Mongo Connect error ' + error);
 }).on('disconnected', function () {
-  logger.debug('Connection disconnected');
+  logger.debug('Mongo disconnected');
 })
 
 module.exports = mongoose

@@ -2,6 +2,7 @@ const args = require('yargs-parser')(process.argv.slice(2))
 const opportunityDb = require('../data-access/opportunity-db/index')
 const pipedrive = require('../third-party/pipedrive');
 const bling = require('../third-party/bling')
+const pipeJob = require('../jobs/syncPipedriveJob');
 
 const printHelp = function () {
   console.log(`
@@ -11,11 +12,12 @@ const printHelp = function () {
     --group list opportunities grouped by day
     --listAllPipedrive list all pipedrive
     --blingCreateOrder create simple order bling
+    --syncPipedrive sync all won opportunities
     --help   print help
   `);
 }
 
-let valid = args.list || args.seed || args.group || args.listAllPipedrive || args.blingCreateOrder
+let valid = args.list || args.seed || args.group || args.listAllPipedrive || args.blingCreateOrder || args.syncPipedrive
 
 if (args.help || !valid) {
   printHelp()
@@ -63,4 +65,12 @@ if(args.blingCreateOrder){
         process.exit(1)
     })(); 
     
+}
+
+if(args.syncPipedrive){
+    (async ()=>{
+        let response = await pipeJob.sync();
+        console.log('sincronizado')
+        process.exit(1)
+    })(); 
 }

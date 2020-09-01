@@ -1,5 +1,8 @@
 version: '3'
 services:
+  redis:
+    image: redis:latest
+    command: ["redis-server", "--bind", "redis", "--port", "6379"]
   linkapi:
     logging:
       driver: "json-file"
@@ -10,5 +13,12 @@ services:
     ports:
       - "3000:3000"
     build: ./docker
+    volumes:
+      - .:/usr/src/app/
+  
+  pipedriveblingqueue:
+    restart: always
+    build: ./docker
+    command: node queue/index.js
     volumes:
       - .:/usr/src/app/
