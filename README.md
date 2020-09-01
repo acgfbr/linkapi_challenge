@@ -68,3 +68,7 @@ e um cli command, o agrupamento foi feito usando aggregate e não percorrendo to
 ✓ lists opportunities (178ms) - lista todas oportunidades
 ✓ find opportunity by opportunity_id (352ms) - procura uma oportunidade 
 ✓ delete a opportunity (536ms)
+
+-   Link doc postman: https://documenter.getpostman.com/view/2492835/TVCe2p6Y
+
+-   Link vídeo funcionando: https://www.youtube.com/watch?v=0FN8rhPk5Hk
